@@ -1,0 +1,56 @@
+﻿@model BTL_Nhom2.Models.ChiTietDatHang
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Xóa chi tiết đặt hàng</h2>
+
+<h3>Bạn có muốn xóa bản ghi này?</h3>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Mã đơn đặt
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DonDatHang.Id)
+        </dd>
+
+        <dt>
+            Tên kích cỡ
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KichCo.TenKichCo)
+        </dd>
+
+        <dt>
+            Tên sản phẩm
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SanPham.TenSP)
+        </dd>
+
+        <dt>
+            Số lượng
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoLuong)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa" class="btn btn-default" /> |
+            @Html.ActionLink("Quay lại", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,38 @@
+﻿@model BTL_Nhom2.Models.ChatLieu
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Xóa chất liệu</h2>
+
+<h3>Bạn có chắc muốn xóa bản ghi này?</h3>
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tên chất liệu
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenChatLieu)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa" class="btn btn-default" /> |
+            @Html.ActionLink("Quay lại", "Index")
+        </div>
+    }
+</div>
+@if (ViewBag.Error != null)
+{
+    <br />
+    <div class="alert alert-danger" role="alert">@ViewBag.Error</div>
+}

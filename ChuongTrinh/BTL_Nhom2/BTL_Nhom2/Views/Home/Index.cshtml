@@ -1,0 +1,290 @@
+﻿@using BTL_Nhom2.Models
+
+@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List<SanPham> listBeTrai = ViewBag.BeTrai;
+    List<SanPham> listBeGai = ViewBag.BeGai;
+    List<SanPham> listTreSoSinh = ViewBag.TreSoSinh;
+    List<SanPham> listPhuKien = ViewBag.PhuKien;
+    List<SanPham> listSanPhamMoi = ViewBag.SanPhamMoi;
+    List<SanPham> listSanPhamBanChay = ViewBag.SanPhamBanChay;
+}
+
+<!-- top-brands -->
+<!-- //new_arrivals -->
+<!--/slider_owl-->
+<!--Danh mục sản phẩm-->
+<div class="new_arrivals_agile_w3ls_info">
+    <div class="container">
+        <h3 class="wthree_text_info">Danh mục <span>sản phẩm</span></h3>
+        <div id="horizontalTab">
+            <ul class="resp-tabs-list">
+                <li> Bé trai</li>
+                <li> Bé Gái</li>
+                <li> Trẻ sơ sinh</li>
+                <li> Phụ kiện</li>
+            </ul>
+            <div class="resp-tabs-container">
+                <!--/tab_one-->
+                <div class="tab1">
+                    @foreach (var item in listBeTrai)
+                    {
+                        <div class="col-md-3 product-men">
+                            <div class="men-pro-item simpleCart_shelfItem">
+                                <div class="men-thumb-item">
+                                    <img src="~/Content/images/@item.HinhMinhHoa" alt="" class="pro-image-front">
+                                    <img src="~/Content/images/@item.HinhMinhHoa" alt="" class="pro-image-back">
+                                    <div class="men-cart-pro">
+                                        <div class="inner-men-cart-pro">
+                                            <a href="@Url.Action("Details","Home",new { id=item.Id})" class="link-product-add-cart">Xem nhanh</a>
+                                        </div>
+                                    </div>
+                                    <span class="product-new-top">New</span>
+
+                                </div>
+                                <div class="item-info-product ">
+                                    <h4><a href="@Url.Action("Details","Home",new { id=item.Id})">@item.TenSP</a></h4>
+                                    <div class="info-product-price">
+                                        <span class="item_price">@item.DonGia VNĐ</span>
+                                        <del>@item.DonGia VNĐ</del>
+                                    </div>
+                                    <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+                                        <form action="@Url.Action("ThemGioHang","GioHang", new { @maSP = item.Id, @strURL = Request.Url.ToString() })" method="post">
+                                            <fieldset>
+                                                <input type="hidden" name="cmd" value="_cart" />
+                                                <input type="hidden" name="add" value="1" />
+                                                <input type="hidden" name="business" value=" " />
+                                                <input type="hidden" name="item_name" value="@item.TenSP" />
+                                                <input type="hidden" name="amount" value="@item.DonGia" />
+                                                <input type="hidden" name="discount_amount" value="0" />
+                                                <input type="hidden" name="currency_code" value="VND" />
+                                                <input type="hidden" name="return" value=" " />
+                                                <input type="hidden" name="cancel_return" value=" " />
+                                                <input type="submit" name="submit" value="Thêm vào giỏ hàng" class="button" />
+                                            </fieldset>
+                                        </form>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                    <div class="clearfix"></div>
+                </div>
+                <!--//tab_one-->
+                <!--/tab_two-->
+                <div class="tab2">
+                    @foreach (var item in listBeGai)
+                    {
+                        <div class="col-md-3 product-men">
+                            <div class="men-pro-item simpleCart_shelfItem">
+                                <div class="men-thumb-item">
+                                    <img src="~/Content/images/@item.HinhMinhHoa" alt="" class="pro-image-front">
+                                    <img src="~/Content/images/@item.HinhMinhHoa" alt="" class="pro-image-back">
+                                    <div class="men-cart-pro">
+                                        <div class="inner-men-cart-pro">
+                                            <a href="@Url.Action("Details","Home",new { id=item.Id})" class="link-product-add-cart">Xem nhanh</a>
+                                        </div>
+                                    </div>
+                                    <span class="product-new-top">New</span>
+
+                                </div>
+                                <div class="item-info-product ">
+                                    <h4><a href="@Url.Action("Details","Home",new { id=item.Id})">@item.TenSP</a></h4>
+                                    <div class="info-product-price">
+                                        <span class="item_price">@item.DonGia VNĐ</span>
+                                        <del>@item.DonGia VNĐ</del>
+                                    </div>
+                                    <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+                                        <form action="@Url.Action("ThemGioHang","GioHang", new { @maSP = item.Id, @strURL = Request.Url.ToString() })" method="post">
+                                            <fieldset>
+                                                <input type="hidden" name="cmd" value="_cart" />
+                                                <input type="hidden" name="add" value="1" />
+                                                <input type="hidden" name="business" value=" " />
+                                                <input type="hidden" name="item_name" value="@item.TenSP" />
+                                                <input type="hidden" name="amount" value="@item.DonGia" />
+                                                <input type="hidden" name="discount_amount" value="0" />
+                                                <input type="hidden" name="currency_code" value="VND" />
+                                                <input type="hidden" name="return" value=" " />
+                                                <input type="hidden" name="cancel_return" value=" " />
+                                                <input type="submit" name="submit" value="Thêm vào giỏ hàng" class="button" />
+                                            </fieldset>
+                                        </form>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                    <div class="clearfix"></div>
+                </div>
+                <!--//tab_two-->
+                <!--/tab_three-->
+                <div class="tab3">
+                    @foreach (var item in listTreSoSinh)
+                    {
+                        <div class="col-md-3 product-men">
+                            <div class="men-pro-item simpleCart_shelfItem">
+                                <div class="men-thumb-item">
+                                    <img src="~/Content/images/@item.HinhMinhHoa" alt="" class="pro-image-front">
+                                    <img src="~/Content/images/@item.HinhMinhHoa" alt="" class="pro-image-back">
+                                    <div class="men-cart-pro">
+                                        <div class="inner-men-cart-pro">
+                                            <a href="@Url.Action("Details","Home",new { id=item.Id})" class="link-product-add-cart">Quick View</a>
+                                        </div>
+                                    </div>
+                                    <span class="product-new-top">New</span>
+
+                                </div>
+                                <div class="item-info-product ">
+                                    <h4><a href="@Url.Action("Details","Home",new { id=item.Id})">@item.TenSP</a></h4>
+                                    <div class="info-product-price">
+                                        <span class="item_price">@item.DonGia VNĐ</span>
+                                        <del>@item.DonGia VNĐ</del>
+                                    </div>
+                                    <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+                                        <form action="@Url.Action("ThemGioHang","GioHang", new { @maSP = item.Id, @strURL = Request.Url.ToString() })" method="post">
+                                            <fieldset>
+                                                <input type="hidden" name="cmd" value="_cart" />
+                                                <input type="hidden" name="add" value="1" />
+                                                <input type="hidden" name="business" value=" " />
+                                                <input type="hidden" name="item_name" value="@item.TenSP" />
+                                                <input type="hidden" name="amount" value="@item.DonGia" />
+                                                <input type="hidden" name="discount_amount" value="0" />
+                                                <input type="hidden" name="currency_code" value="VND" />
+                                                <input type="hidden" name="return" value=" " />
+                                                <input type="hidden" name="cancel_return" value=" " />
+                                                <input type="submit" name="submit" value="Thêm vào giỏ hàng" class="button" />
+                                            </fieldset>
+                                        </form>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                    <div class="clearfix"></div>
+                </div>
+                <!--//tab_three-->
+                <!--/tab_four-->
+                <div class="tab4">
+                    @foreach (var item in listPhuKien)
+                    {
+                        <div class="col-md-3 product-men">
+                            <div class="men-pro-item simpleCart_shelfItem">
+                                <div class="men-thumb-item">
+                                    <img src="~/Content/images/@item.HinhMinhHoa" alt="" class="pro-image-front">
+                                    <img src="~/Content/images/@item.HinhMinhHoa" alt="" class="pro-image-back">
+                                    <div class="men-cart-pro">
+                                        <div class="inner-men-cart-pro">
+                                            <a href="@Url.Action("Details","Home",new { id=item.Id})" class="link-product-add-cart">Xem nhanh</a>
+                                        </div>
+                                    </div>
+                                    <span class="product-new-top">New</span>
+
+                                </div>
+                                <div class="item-info-product ">
+                                    <h4><a href="@Url.Action("Details","Home",new { id=item.Id})">@item.TenSP</a></h4>
+                                    <div class="info-product-price">
+                                        <span class="item_price">@item.DonGia VNĐ</span>
+                                        <del>@item.DonGia VNĐ</del>
+                                    </div>
+                                    <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+                                        <form action="@Url.Action("ThemGioHang","GioHang", new { @maSP = item.Id, @strURL = Request.Url.ToString() })" method="post">
+                                            <fieldset>
+                                                <input type="hidden" name="cmd" value="_cart" />
+                                                <input type="hidden" name="add" value="1" />
+                                                <input type="hidden" name="business" value=" " />
+                                                <input type="hidden" name="item_name" value="@item.TenSP" />
+                                                <input type="hidden" name="amount" value="@item.DonGia" />
+                                                <input type="hidden" name="discount_amount" value="0" />
+                                                <input type="hidden" name="currency_code" value="VND" />
+                                                <input type="hidden" name="return" value=" " />
+                                                <input type="hidden" name="cancel_return" value=" " />
+                                                <input type="submit" name="submit" value="Thêm vào giỏ hàng" class="button" />
+                                            </fieldset>
+                                        </form>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                    <div class="clearfix"></div>
+                </div>
+                <!--//tab_four-->
+            </div>
+        </div>
+    </div>
+</div>
+<!--Sản phẩm mới-->
+<div class="new_arrivals_agile_w3ls_info">
+    <div class="container">
+        <h3 class="wthree_text_info">sản phẩm <span> Mới </span></h3>
+        <div id="horizontalTab">
+            <div class="resp-tabs-container">
+                <!--/tab_one-->
+                <div class="tab5">
+                    @foreach (var item in listSanPhamMoi)
+                    {
+                        <div class="col-md-3 product-men">
+                            <div class="men-pro-item simpleCart_shelfItem">
+                                <div class="men-thumb-item">
+                                    <img src="~/Content/images/@item.HinhMinhHoa" alt="" class="pro-image-front">
+                                    <img src="~/Content/images/@item.HinhMinhHoa" alt="" class="pro-image-back">
+                                    <div class="men-cart-pro">
+                                        <div class="inner-men-cart-pro">
+                                            <a href="@Url.Action("Details","Home",new { id=item.Id})" class="link-product-add-cart">Xem nhanh</a>
+                                        </div>
+                                    </div>
+                                    <span class="product-new-top">New</span>
+
+                                </div>
+                                <div class="item-info-product ">
+                                    <h4><a href="@Url.Action("Details","Home",new { id=item.Id})">@item.TenSP</a></h4>
+                                    <div class="info-product-price">
+                                        <span class="item_price">@item.DonGia VNĐ</span>
+                                        <del>@item.DonGia VNĐ</del>
+                                    </div>
+                                    <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+                                        <form action="@Url.Action("ThemGioHang","GioHang", new { @maSP = item.Id, @strURL = Request.Url.ToString() })" method="post">
+                                            <fieldset>
+                                                <input type="hidden" name="cmd" value="_cart" />
+                                                <input type="hidden" name="add" value="1" />
+                                                <input type="hidden" name="business" value=" " />
+                                                <input type="hidden" name="item_name" value="@item.TenSP" />
+                                                <input type="hidden" name="amount" value="@item.DonGia" />
+                                                <input type="hidden" name="discount_amount" value="0" />
+                                                <input type="hidden" name="currency_code" value="VND" />
+                                                <input type="hidden" name="return" value=" " />
+                                                <input type="hidden" name="cancel_return" value=" " />
+                                                <input type="submit" name="submit" value="Thêm vào giỏ hàng" class="button" />
+                                            </fieldset>
+                                        </form>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                    <div class="clearfix"></div>
+                </div>
+                <!--//tab_one-->
+                <!--/tab_two-->
+                <!--//tab_two-->
+                <!--/tab_three-->
+                <!--//tab_three-->
+                <!--/tab_four-->
+                <!--//tab_four-->
+            </div>
+        </div>
+    </div>
+</div>
+
+

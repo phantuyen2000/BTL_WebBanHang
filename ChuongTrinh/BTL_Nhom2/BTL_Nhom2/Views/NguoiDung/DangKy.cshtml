@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewBag.Title = "DangKy";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table align="center" style="font-size:13pt">
+    <h2 style="text-align:center">ĐĂNG KÝ THÀNH VIÊN</h2><br />
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+        <tr style="height:40px">
+            <td>Họ tên khách hàng:</td>
+            <td>@Html.TextBox("HotenKH") @ViewData["Loi1"]</td>
+        </tr>
+
+        <tr style="height:40px">
+            <td>Tên đăng nhập:</td>
+            <td>@Html.TextBox("TenDN") @ViewData["Loi2"]</td>
+        </tr>
+        <tr style="height:40px">
+            <td>Mật khẩu:</td>
+            <td>@Html.Password("MatKhau") @ViewData["Loi3"]</td>
+        </tr>
+        <tr style="height:40px">
+            <td>Mật khẩu nhập lại:</td>
+            <td>@Html.Password("MatKhauNhapLai") @ViewData["Loi4"]</td>
+        </tr>
+
+        <tr style="height:40px">
+            <td>Địa chỉ:</td>
+            <td>@Html.TextBox("DiaChi") @ViewData["Loi5"]</td>
+        </tr>
+
+        <tr style="height:40px">
+            <td>Điện thoại:</td>
+            <td>@Html.TextBox("DienThoai") @ViewData["Loi6"]</td>
+        </tr>
+        <tr style="height:40px">
+            <td>Avatar:</td>
+            <td>
+                <img id="output" class="img-rounded" alt="Ảnh" width="180" height="200"
+                     src="~/Content/images/h0.png" />
+                <p><label for="ufile" style="cursor:pointer;">Chọn file ảnh</label></p>
+                <input name="imgFile" id="ufile" type="file" style="display:none;" onchange="loadFile(event)" />
+                @ViewData["Loi7"]
+            </td>
+        </tr>
+        <tr style="height:40px">
+            <td>Ngày sinh:</td>
+            <td> <input type="date" name="NgaySinh" />@ViewData["Loi8"]</td>
+        </tr>
+        <tr style="height:40px">
+            <td>Giới tính:</td>
+            <td>@Html.RadioButton("GioiTinh","Nam",true)Nam @Html.RadioButton("GioiTinh","Nữ")Nữ</td>
+        </tr>
+        <tr style="height:40px">
+            <td>Email:</td>
+            <td>@Html.TextBox("Email") @ViewData["Loi9"]</td>
+        </tr>
+
+        <tr style="height:40px">
+            <td></td>
+            <td><input type="submit" value="Đăng ký" /></td>
+        </tr>
+    }
+</table>
+<script>
+    var loadFile = function (event) {
+        var img = document.getElementById('output');
+        img.src = URL.createObjectURL(event.target.files[0]);
+    };
+</script>

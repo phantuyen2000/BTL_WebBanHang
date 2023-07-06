@@ -1,0 +1,43 @@
+﻿@model IEnumerable<BTL_Nhom2.Models.ChiTietDatHang>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Chi tiết đặt hàng</h2>
+
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>
+            Mã đơn đặt
+        </th>
+        <th>
+            Tên kích cỡ
+        </th>
+        <th>
+            Tên sản phẩm
+        </th>
+        <th>
+            Số lượng
+        </th>
+        
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DonDatHang.Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KichCo.TenKichCo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SanPham.TenSP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoLuong)
+        </td>
+    </tr>
+}
+
+</table>

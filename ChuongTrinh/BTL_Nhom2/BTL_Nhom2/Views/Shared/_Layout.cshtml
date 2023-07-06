@@ -1,0 +1,355 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Thời trang trẻ em</title>
+    <!--/tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Elite Shoppy Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script type="application/x-javascript">
+        addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+               function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!--//tags -->
+    <link href="~/Content/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Content/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Content/css/font-awesome.css" rel="stylesheet">
+    <link href="~/Content/css/easy-responsive-tabs.css" rel='stylesheet' type='text/css' />
+    <!-- //for bootstrap working -->
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
+    <link href='//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,900,900italic,700italic' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <!-- header -->
+    <div class="header" id="home">
+        <div class="container">
+            <ul>
+                <li> <a href="@Url.Action("DangNhap","NguoiDung")"><i class="fa fa-unlock-alt" aria-hidden="true"></i> Sign In </a></li>
+                <li> <a href="@Url.Action("DangKy","NguoiDung")"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Sign Up </a></li>
+                <li><i class="fa fa-phone" aria-hidden="true"></i> Call : 0912345678</li>
+                <li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:G@Email.com">G@Email.com</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- //header -->
+    <!-- header-bot -->
+    <div class="header-bot">
+        <div class="header-bot_inner_wthreeinfo_header_mid">
+            <div class="col-md-4 header-middle">
+                @using (Html.BeginForm("Search", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    <input type="search" name="search" placeholder="Tìm kiếm..." required="">
+                    <input type="submit" value=" ">
+                    <div class="clearfix"></div>
+                }
+                
+            </div>
+            <!-- header-bot -->
+            <div class="col-md-4 logo_agile">
+                <h2><a href="/Home/Index"><span>Thời trang </span>Trẻ em </a></h2>
+            </div>
+            
+            
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <!-- //header-bot -->
+    <!-- banner -->
+    <div class="ban-top">
+        <div class="container">
+            <div class="top_nav_left">
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse menu--shylock" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav menu__list">
+                                <li class="active menu__item menu__item--current"><a class="menu__link" href="~/Home/Index">Trang chủ <span class="sr-only">(current)</span></a></li>
+                                <li class=" menu__item"><a class="menu__link" href="~/Home/BeTrai">Bé Trai</a></li>
+                                <li class=" menu__item"><a class="menu__link" href="~/Home/BeGai">Bé Gái</a></li>
+                                <li class=" menu__item"><a class="menu__link" href="~/Home/TreSoSinh">Trẻ Sơ Sinh</a></li>
+                                <li class=" menu__item"><a class="menu__link" href="~/Home/PhuKien">Phụ kiện</a></li>
+                                <li class=" menu__item"><a class="menu__link" href="~/Home/about">Thông tin</a></li>
+                                <li class=" menu__item"><a class="menu__link" href="~/Home/contact">Liên hệ</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="top_nav_right">
+                <div class="wthreecartaits wthreecartaits2 cart cart box_1">
+                    @using (Html.BeginForm("GioHang", "GioHang", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        <input type="hidden" name="cmd" value="_cart">
+                        <input type="hidden" name="display" value="1">
+                        <button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
+                    }
+
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <!-- //banner-top -->
+    
+    
+    <!-- banner -->
+    <!--Nơi đặt slidershow-->
+    <!-- //banner -->
+
+    <div class="banner_bottom_agile_info">
+        <div class="container">
+            <div class="banner_bottom_agile_info_inner_w3ls">
+                <div class="col-md-6 wthree_banner_bottom_grid_three_left1 grid">
+                    <figure class="effect-roxy">
+                        <img src="~/Content/images/Banner5.jpg" alt=" " class="img-responsive" />
+                        <figcaption>
+                            <h3><span>H</span>ình Ảnh</h3>
+                            <p>Shop</p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col-md-6 wthree_banner_bottom_grid_three_left1 grid">
+                    <figure class="effect-roxy">
+                        <img src="~/Content/images/Banner6.gif" alt=" " class="img-responsive" />
+                        <figcaption>
+                            <h3><span>H</span>ình Ảnh</h3>
+                            <p>Shop</p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    
+        @RenderBody()
+    
+    <!-- schedule-bottom -->
+    <!-- //schedule-bottom -->
+    <!-- banner-bootom-w3-agileits -->
+    <!--/grids-->
+    <!--/grids-->
+    <!-- /new_arrivals -->
+    <!-- //new_arrivals -->
+    <!--/grids-->
+    <div class="coupons">
+        <div class="coupons-grids text-center">
+            <div class="w3layouts_mail_grid">
+                <div class="col-md-3 w3layouts_mail_grid_left">
+                    <div class="w3layouts_mail_grid_left1 hvr-radial-out">
+                        <i class="fa fa-truck" aria-hidden="true"></i>
+                    </div>
+                    <div class="w3layouts_mail_grid_left2">
+                        <h3>Miễn phí vận chuyển</h3>
+                        <p>Hỗ trợ 100% chi phí vận chuyển hàng</p>
+                    </div>
+                </div>
+                <div class="col-md-3 w3layouts_mail_grid_left">
+                    <div class="w3layouts_mail_grid_left1 hvr-radial-out">
+                        <i class="fa fa-headphones" aria-hidden="true"></i>
+                    </div>
+                    <div class="w3layouts_mail_grid_left2">
+                        <h3>Hỗ trợ 24/7</h3>
+                        <p>Hỗ trợ, giải đáp thắc mắc của khách hàng 24/7</p>
+                    </div>
+                </div>
+                <div class="col-md-3 w3layouts_mail_grid_left">
+                    <div class="w3layouts_mail_grid_left1 hvr-radial-out">
+                        <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                    </div>
+                    <div class="w3layouts_mail_grid_left2">
+                        <h3>Trả hàng - Hoàn tiền</h3>
+                        <p>Khách hàng có thể đổi trả nếu sản phẩm gặp lỗi</p>
+                    </div>
+                </div>
+                <div class="col-md-3 w3layouts_mail_grid_left">
+                    <div class="w3layouts_mail_grid_left1 hvr-radial-out">
+                        <i class="fa fa-gift" aria-hidden="true"></i>
+                    </div>
+                    <div class="w3layouts_mail_grid_left2">
+                        <h3>COUPONS QUÀ TẶNG FREE</h3>
+                        <p>Cửa hàng có nhiều chương trình ưu đãi khách hàng</p>
+                    </div>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+
+        </div>
+    </div>
+    <!--grids-->
+    <!-- footer -->
+    <div class="footer">
+        <div class="footer_agile_inner_info_w3l">
+            <div class="col-md-3 footer-left">
+                <h2><a href="index.html"><span>Thời trang</span>Trẻ em </a></h2>
+                <p>
+                    Website Thời trang trẻ em, chuyên cung cấp các mặt hàng thời trang quần áo dành cho bé trai , bé gái , trẻ sơ sinh ...
+                </p>
+                <ul class="social-nav model-3d-0 footer-social w3_agile_social two">
+                    <li>
+                        <a href="#" class="facebook">
+                            <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
+                            <div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="twitter">
+                            <div class="front"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+                            <div class="back"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="instagram">
+                            <div class="front"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                            <div class="back"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="pinterest">
+                            <div class="front"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                            <div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-9 footer-right">
+                <div class="sign-grds">
+                    <div class="col-md-4 sign-gd">
+                        <h4>ME<span>NU</span> </h4>
+                        <ul>
+                            <li><a href="~/Home/Index">Trang chủ</a></li>
+                            <li><a href="~/Home/BeTrai">Bé trai</a></li>
+                            <li><a href="~/Home/BeGai">Bé gái</a></li>
+                            <li><a href="~/Home/TreSoSinh">Trẻ sơ sinh</a></li>
+                            <li><a href="~/Home/About">Thông tin</a></li>
+                            <li><a href="~/Home/Contact">Liên hệ</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-5 sign-gd-two">
+                        <h4>Thông tin <span>Cửa hàng</span></h4>
+                        <div class="w3-address">
+                            <div class="w3-address-grid">
+                                <div class="w3-address-left">
+                                    <i class="fa fa-phone" aria-hidden="true"></i>
+                                </div>
+                                <div class="w3-address-right">
+                                    <h6>Hotline: </h6>
+                                    <p>0912345678</p>
+                                </div>
+                                <div class="clearfix"> </div>
+                            </div>
+                            <div class="w3-address-grid">
+                                <div class="w3-address-left">
+                                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                                </div>
+                                <div class="w3-address-right">
+                                    <h6>Email</h6>
+                                    <p>Email :<a href="mailto:G@Email.com"> G@Email.com</a></p>
+                                </div>
+                                <div class="clearfix"> </div>
+                            </div>
+                            <div class="w3-address-grid">
+                                <div class="w3-address-left">
+                                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                </div>
+                                <div class="w3-address-right">
+                                    <h6>Địa chỉ</h6>
+                                    <p>
+                                        Hà Nội . VIỆT NAM
+
+                                    </p>
+                                </div>
+                                <div class="clearfix"> </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            
+            <p class="copy-right">&copy; @DateTime.Now.Year Thời trang trẻ em. All rights reserved | Made by <a href="#">Nhóm 2</a></p>
+        </div>
+    </div>
+    <!-- //footer -->
+    
+    <a href="#home" class="scroll" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+
+    <!-- js -->
+    <script type="text/javascript" src="~/Content/js/jquery-2.1.4.min.js"></script>
+    <!-- //js -->
+    <script src="~/Content/js/modernizr.custom.js"></script>
+    
+    <script src="~/Content/js/easy-responsive-tabs.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#horizontalTab').easyResponsiveTabs({
+                type: 'default', //Types: default, vertical, accordion
+                width: 'auto', //auto or any width like 600px
+                fit: true,   // 100% fit in a container
+                closed: 'accordion', // Start closed if in accordion view
+                activate: function (event) { // Callback function if tab is switched
+                    var $tab = $(this);
+                    var $info = $('#tabInfo');
+                    var $name = $('span', $info);
+                    $name.text($tab.text());
+                    $info.show();
+                }
+            });
+            $('#verticalTab').easyResponsiveTabs({
+                type: 'vertical',
+                width: 'auto',
+                fit: true
+            });
+        });
+    </script>
+    <!-- //script for responsive tabs -->
+    <!-- stats -->
+    <script src="~/Content/js/jquery.waypoints.min.js"></script>
+    <script src="~/Content/js/jquery.countup.js"></script>
+    <script>
+        $('.counter').countUp();
+    </script>
+    <!-- //stats -->
+    <!-- start-smoth-scrolling -->
+    <script type="text/javascript" src="~/Content/js/move-top.js"></script>
+    <script type="text/javascript" src="~/Content/js/jquery.easing.min.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+            });
+        });
+    </script>
+    <!-- here stars scrolling icon -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            /*
+                var defaults = {
+                containerID: 'toTop', // fading element id
+                containerHoverID: 'toTopHover', // fading element hover id
+                scrollSpeed: 1200,
+                easingType: 'linear'
+                };
+            */
+
+            $().UItoTop({ easingType: 'easeOutQuart' });
+
+        });
+    </script>
+    <!-- //here ends scrolling icon -->
+    <!-- for bootstrap working -->
+    <script type="text/javascript" src="~/Content/js/bootstrap.js"></script>
+</body>
+</html>

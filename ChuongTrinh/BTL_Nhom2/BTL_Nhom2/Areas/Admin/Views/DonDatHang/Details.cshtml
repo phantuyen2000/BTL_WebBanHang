@@ -1,0 +1,42 @@
+﻿@model IEnumerable<BTL_Nhom2.Models.ChiTietDatHang>
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Chi tiết đơn đặt hàng</h2>
+
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>Mã sản phẩm</th>
+        <th>Tên sản phẩm</th>
+        <th>Hình ảnh</th>
+        <th>Kích cỡ</th>
+        <th>Số lượng</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.SanPham.Id)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SanPham.TenSP)
+    </td>
+    <td>
+        @{
+            string imgPath = "~/Content/images/" + item.SanPham.HinhMinhHoa;
+        }
+        <img src="@Url.Content(imgPath)" width="100" class="img-thumbnail" />
+        <br />
+        @Html.DisplayFor(modelItem => item.SanPham.HinhMinhHoa)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.KichCo.TenKichCo)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SoLuong)
+    </td>
+</tr>
+    }
+</table>

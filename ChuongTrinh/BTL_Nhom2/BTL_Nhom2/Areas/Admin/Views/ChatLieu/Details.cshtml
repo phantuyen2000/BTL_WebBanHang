@@ -1,0 +1,26 @@
+﻿@model BTL_Nhom2.Models.ChatLieu
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Chi tiết chất liệu</h2>
+
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tên chất liệu
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenChatLieu)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Chỉnh sửa", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Quay lại", "Index")
+</p>

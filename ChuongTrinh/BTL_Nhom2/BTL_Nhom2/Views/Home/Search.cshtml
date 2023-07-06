@@ -1,0 +1,64 @@
+﻿@model PagedList.IPagedList<BTL_Nhom2.Models.SanPham>
+@using PagedList.Mvc
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Kết quả tìm kiếm</h2>
+<div>
+    @foreach (var item in Model)
+    {
+        <div class="col-md-3 product-men">
+            <div class="men-pro-item simpleCart_shelfItem">
+                <div class="men-thumb-item">
+                    <img src="~/Content/images/@item.HinhMinhHoa" alt="" class="pro-image-front">
+                    <img src="~/Content/images/@item.HinhMinhHoa" alt="" class="pro-image-back">
+                    <div class="men-cart-pro">
+                        <div class="inner-men-cart-pro">
+                            <a href="@Url.Action("Details","Home",new { id=item.Id})" class="link-product-add-cart">Xem nhanh</a>
+                        </div>
+                    </div>
+                    <span class="product-new-top">New</span>
+
+                </div>
+                <div class="item-info-product ">
+                    <h4><a href="@Url.Action("Details","Home",new { id=item.Id})">@item.TenSP</a></h4>
+                    <div class="info-product-price">
+                        <span class="item_price">@item.DonGia VNĐ</span>
+                        <del>@item.DonGia VNĐ</del>
+                    </div>
+                    <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+                        <form action="#" method="post">
+                            <fieldset>
+                                <input type="hidden" name="cmd" value="_cart" />
+                                <input type="hidden" name="add" value="1" />
+                                <input type="hidden" name="business" value=" " />
+                                <input type="hidden" name="item_name" value="@item.TenSP" />
+                                <input type="hidden" name="amount" value="@item.DonGia" />
+                                <input type="hidden" name="discount_amount" value="0" />
+                                <input type="hidden" name="currency_code" value="VND" />
+                                <input type="hidden" name="return" value=" " />
+                                <input type="hidden" name="cancel_return" value=" " />
+                                <input type="submit" name="submit" value="Thêm vào giỏ hàng" class="button" />
+                            </fieldset>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    }
+    @if (ViewBag.Result != null)
+    {
+        <br />
+        <p style="align-content:center;">@ViewBag.Result</p>
+    }
+    <div class="clearfix"></div>
+    <div class="clearfix"></div>
+    Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount
+    @Html.PagedListPager(Model, page => Url.Action("Search", new
+    {
+        search = ViewBag.Search,
+        page
+    }))
+</div>
